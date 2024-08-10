@@ -1,0 +1,306 @@
+@import url(reset.css);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: hsl(210, 46%, 95%);
+    font-family:"Barlow Semi Condensed", sans-serif;
+}
+
+/* utilities */
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+/* Main properties */
+
+.continaer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.grid-box{
+    width: 70%;
+    max-height: 650px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,1fr);
+    row-gap: 25px;
+    column-gap: 25px;
+
+}
+
+.box{
+    background-color: yellowgreen;
+    border-radius: 8px;
+}
+
+/* Box proerties */
+
+/* box 1 */
+
+.box1{
+    grid-row: 1/3;
+    grid-column: 1/3;
+    background-color: hsl(263, 55%, 52%);
+    position: relative;
+    z-index: -1;
+}
+
+.pattern{
+    position: absolute;
+    right: 100px;
+    opacity: 50%;
+}
+
+.box1 .last{
+    color: hsl(0, 0%, 100%);
+    margin-top: 10px !important;
+}
+
+.box1 .content{
+    padding: 22px 28px 28px 28px;
+}
+
+
+/* box 2 */
+
+.box2{
+    background-color: hsl(217, 19%, 35%);
+    grid-row: 1/3;
+}
+
+.box2 .last{
+    color: hsl(0, 0%, 100%);
+}
+
+/* box 3 */
+
+.box3{
+    background-color: hsl(0, 0%, 100%);
+    grid-row: 1/5;
+}
+
+.box3 span:nth-child(1)
+{
+    color: black !important;
+}
+
+.box3 span:nth-child(2)
+{
+    color: black !important;
+}
+
+.box3 .mid{
+    color: black;
+}
+
+/* box 4 */
+
+.box4{
+    background-color: hsl(0, 0%, 100%);
+    grid-row: 3/5;
+}
+
+.box4 span:nth-child(1)
+{
+    color: black !important;
+}
+
+.box4 span:nth-child(2)
+{
+    color: black !important;
+}
+
+.box4 .mid{
+    color: black;
+}
+
+/* box 5 */
+
+.box5{
+    background-color: hsl(219, 29%, 14%);
+    grid-row: 3/5;
+    grid-column: 2/4;
+}
+
+.box5 .last{
+    color: hsl(0, 0%, 100%);
+}
+
+.info{
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.info span:nth-child(1){
+    color: hsl(0, 0%, 100%);
+}
+
+.info span:nth-child(2){
+    margin-top: -3px;
+    font-size: 0.9rem;
+    color: hsl(0, 0%, 100%);
+    opacity: 50%;
+}
+
+.name{
+    gap: 20px;
+    font-size: 1rem;
+}
+
+.name img{
+    border-radius: 50%;
+    width: 40px;
+}
+
+.content{
+    padding: 28px;
+    z-index: 1;
+}
+
+/* paragraph */
+
+.mid{
+    margin-top: 15px;
+    z-index: 100%;
+    color: hsl(0, 0%, 100%);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.last{
+    font-size: 0.9rem;
+    line-height: 18px;
+    margin-top: 20px;
+    opacity: 70%;
+}
+
+.space{
+    margin-bottom: 100px;
+}
+
+/* media queries */
+
+@media screen and (max-width: 1450px)
+{
+    .mid{
+        font-size: 0.9rem;
+        overflow: hidden;
+    }
+
+    .last{
+        font-size: 0.9rem;
+        overflow: hidden;
+        margin-top: 10px;
+    }
+
+    .grid-box{
+        width: 90%; 
+        row-gap: 15px;
+        column-gap: 15px;
+    }
+
+    .container{
+        height: 100vh;
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 1024px){
+
+    .continaer{
+        overflow-x: hidden;
+    }
+
+    .grid-box{
+        display: flex;
+
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .box5{
+        height: 100%;
+        margin-bottom: 500px;
+    }
+
+    .box1 img{
+        font-size: 10px;
+    }
+
+    .box5{
+        margin-bottom: 50px;
+    }
+
+}
+
+
+@media screen and (max-width: 768px){
+
+    .continaer{
+        overflow-x: hidden;
+        height: 100vh;
+    }
+    .grid-box{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .box5{
+        height: 100%;
+        margin-bottom: 500px;
+    }
+
+    .box1 img{
+        font-size: 10px;
+    }
+
+    .pattern{
+        right: 10px;
+    }
+    .box5{
+        margin-bottom: 50px;
+    }
+    
+}
+
+
+@media screen and (max-width: 480px){
+
+    .continaer{
+        overflow-x: hidden;
+        height: 100vh;
+    }
+
+    .pattern{
+        right: 10px;
+    }
+
+    .grid-box{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: 100vh;
+    }
+
+    .box5{
+        height: 100%;
+        margin-bottom: 500px;
+    }
+
+    .box1 img{
+        font-size: 10px;
+    }
+
+}
+
